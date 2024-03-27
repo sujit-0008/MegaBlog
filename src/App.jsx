@@ -1,21 +1,21 @@
-
-import './App.css'
-import { Client } from 'appwrite'; 
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import { Header, Footer } from "../src/components/index";
+import UsegetUser from "../src/components/index";
 
 function App() {
-console.log(import.meta.env.VITE_APPWRITE_URL)
-const client = new Client();
-
-client
-    .setEndpoint('https://cloud.appwrite.io/v1')
-    .setProject('65e5c4c6b5cfc4dda432');
-
-  return (
-    <>
-   
-   <div>Hello React</div>
-    </>
-  )
+  const { loading } = UsegetUser();
+  return !loading ? (
+    <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
+      <div className="w-full block">
+        <Header />
+        <main>TODO:</main>
+        <Footer />
+      </div>
+    </div>
+  ) : (
+    <div>Please waite </div>
+  );
 }
 
-export default App
+export default App;
