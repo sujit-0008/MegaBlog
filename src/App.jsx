@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
-import { Header, Footer } from "../src/components/index";
-import UsegetUser from "../src/components/index";
+import { Header, Footer ,UsegetUser} from "../src/components/index";
+
 
 function App() {
   const { loading } = UsegetUser();
