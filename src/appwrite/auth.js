@@ -4,9 +4,7 @@ export class AuthServices {
   client = new Client();
   account;
   constructor() {
-    this.client
-      .setEndpoint(config.url) 
-      .setProject(config.projectId);
+    this.client.setEndpoint(config.url).setProject(config.projectId);
 
     this.account = new Account(this.client);
   }
@@ -31,7 +29,7 @@ export class AuthServices {
 
   async login({ email, password }) {
     try {
-      return this.account.createEmailPasswordSession(email, password);
+      return await this.account.createEmailPasswordSession(email, password);
     } catch (error) {
       throw error;
     }

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./App.css";
-import { Header, Footer } from "../src/components/index";
-import UsegetUser from "../src/components/index";
+import { Header, Footer, UsegetUser } from "../src/components/index";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const { loading } = UsegetUser();
@@ -9,7 +9,9 @@ function App() {
     <div className="min-h-screen flex flex-wrap content-between bg-gray-400">
       <div className="w-full block">
         <Header />
-        <main>TODO:</main>
+        <main>
+          TODO: <Outlet />
+        </main>
         <Footer />
       </div>
     </div>
